@@ -120,8 +120,8 @@ class transmission (
     # Broken. Creates invalid resurce tags for some downloaded files with funny
     # characters.
     #recurse => true,
-    owner   => $transmission_user,
-    group   => $transmission_group,
+#    owner   => $transmission_user,
+#    group   => $transmission_group,
     mode    => 'ug+rw,u+x',
     # Let's give the installer a chance to create the directory and user before
     # we manage this dir
@@ -133,8 +133,8 @@ class transmission (
     file { $incomplete_dir:
       ensure  => directory,
       recurse => true,
-      owner   => $transmission_user,
-      group   => $transmission_group,
+#      owner   => $transmission_user,
+#      group   => $transmission_group,
       mode    => 'ug+rw,u+x',
       require => Package['transmission-daemon'],
     }
